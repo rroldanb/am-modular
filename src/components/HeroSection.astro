@@ -1,0 +1,54 @@
+---
+import Section from "./Section.astro"
+---
+<!-- Home -->
+<Section
+  title="am & cm "
+  subtitle="Arquitectura y Construcción Modular"
+  color="white"
+  id="home"
+
+  displayCard1="inline-block"
+  titleCard1="Construcción Modular"
+  boldCard1="Somos Construccion Modular"
+  detailCard1="Contamos con amplia experiencia en el ámbito de la construcción, contamos con talleres propios para el desarrollo de los materiales y personal calificados para el desarrollo de nuestros proyectos"
+  
+  displayCard2="inline-block"
+  titleCard2="Arquitectura Modular"
+  boldCard2="Somos Arquitectura Modular"
+  detailCard2="los materiales que se utilizaron para esta construcción fueron diseñados y elaborados por nuestros talleres ubicados en la comuna de Concón y la ejecución del proyecto tomó 3 semanas"
+  
+  displayCard3="inline-block"
+  titleCard3="Talleres Propios"
+  boldCard3="Los desafíos de esta obra:"
+  detailCard3="En un ambiente y terreno de mucha humedad se debió llevar a cabo los estudios de suelo para asentar correctamente la construccion de modo que sea seguro para su habitación y cumpla con todas las normativas vigentes"
+
+  >
+
+  
+  <div slot="footer">
+
+    <a
+      class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
+      font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors mb-8"
+      href="#contacto"
+    >
+      Contacto</a
+    >
+    
+
+    <div slot="after">
+
+      
+    </div>
+
+  </div>
+
+  <video
+    slot="background"
+    class="object-center object-cover h-full w-full"
+    autoplay
+    muted
+    loop
+    src="/video.mp4"></video>
+</Section>

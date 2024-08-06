@@ -1,0 +1,153 @@
+---
+import Logo from "./Logo.astro"
+---
+
+<header
+  id="landing-header"
+  class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+>
+  <div class="flex flex-grow basis-0 ">
+    <a href="./"><img src="./logo-am-transp.svg" alt="Logo am-cm"  class="transition-colors border-white border-2 bg-slate-800/50 sm:bg-slate-800/50 md:bg-slate-800/10 w-12 md:w-20 p-0 rounded-lg mr-1 " ></a>
+    <a href="./"><img src="./logo-cm-transp.svg" alt="Logo am-cm"  class="transition-colors border-white border-2 bg-slate-800/50 sm:bg-slate-800/50 md:bg-slate-800/10 w-12 md:w-20 p-0 rounded-lg  ml-1" ></a>
+  </div>
+
+  <!-- NavBar extendida -->
+  <nav class="hidden xl:block sm:hidden">
+    <ul
+      class="flex text-sm bg-slate-800/50 [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current 
+      [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+      <li><a href="#marina">Casa Marina</a></li>
+      <li><a href="#lago">Casa Lago</a></li>
+      <li><a href="#montania">Casa Montaña</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#construccion">Construcción</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+<!-- Menu -->
+  <nav class="flex flex-grow justify-end basis-0">
+    <ul
+      class="flex xl:hidden bg-slate-800/50 text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current 
+      [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+      <li><a id="menu-btn" class="border-[1px] border-white rounded-lg" href="#">Menú</a></li>
+    </ul>
+  </nav>
+<!-- NavBar Modal -->
+  <nav id="modal-menu" class=" hidden xl:hidden flex-col bg-slate-500/80 fixed top-0 left-0 right-0 bottom-0 ">
+    <button id="close-btn" class=" w-screen flex justify-end p-4 mt-12">
+      <img  class="h-8 bg-slate-200 rounded-lg hover:bg-slate-400" src="/close-icon.svg" alt="close image">
+    </button>
+      <ul
+      class="flex flex-col mt-2  w-full items-end
+      [&>li]:m-2  
+      [&>li>a]:transition-colors 
+      [&>li>a]:flex 
+      [&>li>a]:justify-end
+      [&>li>a]:justify-items-end
+      [&>li>a]:duration-200 
+      [&>li>a]:text-white 
+      [&>li>a]:font-small 
+      [&>li>a]:px-6 
+      [&>li>a]:py-0 
+      [&>li>a]:rounded-md 
+      [&>li>a]:w-max"
+      >
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#home"> Inicio </a> </li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#marina">Casa Marina</a></li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#lago">Casa Lago</a></li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#montania">Casa Montaña</a></li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#proyectos">Proyectos</a></li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#construccion">Construcción</a></li>
+        <li><a class="hover:bg-slate-200 hover:text-slate-700" href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div
+    id="menu-backdrop"
+    class={`
+      absolute bg-slate-800/50 backdrop-blur-lg rounded
+      translate-x-[var(--left)] 
+      translate-y-[var(--top)]
+      left-0 top-0
+      w-[var(--width)] h-[var(--height)]
+      transition-all duration-500
+      ease-in-out opacity-0 -z-10
+    `}
+  >
+
+  </div>
+</header>
+
+<script >
+  const menuBtn = document.getElementById('menu-btn');
+  const modalMenu = document.querySelector("#modal-menu")
+  const menuItems = modalMenu.querySelectorAll('li>a ');
+  const closeBtn = document.querySelector("#close-btn")
+  
+  function toggleDropdownMenu() {
+    modalMenu.classList.toggle('hidden');
+  }
+
+
+  menuBtn.addEventListener('click',toggleDropdownMenu)
+
+  closeBtn.addEventListener('click',toggleDropdownMenu)
+
+  menuItems.forEach(Item => {
+    Item.addEventListener('click',toggleDropdownMenu);
+});
+
+
+
+</script>
+
+
+<script>
+  const listItem = document.querySelectorAll("#landing-header li")
+  const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement
+
+  listItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect()
+
+      menuBackDrop.style.setProperty("--left", `${left}px`)
+      menuBackDrop.style.setProperty("--top", `${top}px`)
+      menuBackDrop.style.setProperty("--width", `${width}px`)
+      menuBackDrop.style.setProperty("--height", `${height}px`)
+
+      menuBackDrop.style.opacity = "1"
+      menuBackDrop.style.visibility = "visible"
+    })
+
+    item.addEventListener("mouseleave", () => {
+      menuBackDrop.style.opacity = "0"
+      menuBackDrop.style.height="0"
+      menuBackDrop.style.visibility = "hidden"
+    })
+  })
+</script>
+
+<script>
+  const headerEl = document.querySelector("#landing-header") as HTMLElement
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px", // en cuanto se vea el elemento
+    threshold: 0.9, // porcentaje de visibilidad
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const { isIntersecting } = entry
+      if (isIntersecting) {
+        const color = entry.target.getAttribute("data-header-color")
+        headerEl.style.color = color
+      }
+    })
+  }, observerOptions)
+
+  const sectionElements = document.querySelectorAll(".landing-section")
+  sectionElements.forEach((section) => observer.observe(section))
+</script>

@@ -1,0 +1,42 @@
+---
+import Construccion from "../components/Construccion.astro";
+import Contacto from "../components/Contacto.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Marina from "../components/Marina.astro";
+import Lago from "../components/Lago.astro";
+import Montania from "../components/Montania.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="AMyCM - La casa de tus sueños">
+  <LandingHeader />
+
+  <main
+    class="snap-y snap-mandatory relative h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+  >
+    <div class="snap-center">
+      <HeroSection />
+    </div>
+    <div class="snap-center">
+      <Montania />
+    </div>
+    <div class="snap-center">
+      <Lago />
+    </div>
+    <div class="snap-center">
+      <Marina />
+    </div>
+    <div class="snap-center">
+      <Proyectos />
+    </div>
+    <div class="snap-center">
+      <Construccion />
+    </div>
+    <div class="snap-center">
+      <Contacto />
+    </div>
+    
+  </main>
+</Layout>
