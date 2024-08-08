@@ -3,15 +3,14 @@ import Section from "./Section.astro";
 ---
 
 <Section
-  title="Casa Marina"
-  subtitle="Agenda una visita"
+  title="Casa Valle Alegre"
   color="white"
-  id="marina"
+  id="valleAlegre"
 
   displayCard1="inline-block"
   titleCard1="Descripción"
-  boldCard1="La casa Marina:"
-  detailCard1="Ubicada en un acogedor lugar costero con fabulosas vistas hacia la costa fue emplazada con una superficie de 300 m2"
+  boldCard1="La casa Valle Alegre:"
+  detailCard1="Ubicada en la tranquila localidad de Valle Alegre con fabulosas vistas hacia el valle fue emplazada con una superficie de 300 m2"
   
   displayCard2="inline-block"
   titleCard2="Detalles"
@@ -29,13 +28,13 @@ import Section from "./Section.astro";
 
   <div slot="footer" class="gap-x-6 flex mx-auto mb-8">
 
-    <a
+    <!-- <a
     class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
     font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
       href="#"
     >
       Saber más</a
-    >
+    > -->
     <a
     class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
     font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
@@ -47,9 +46,9 @@ import Section from "./Section.astro";
 
   <img
     slot="background"
-    alt="Casa Marina"
+    alt="Casa Valle Alegre"
     class="h-full w-full object-cover object-center"
-    src="marina.avif"
+    src="valle-alegre.avif"
     id="bg-image-models"
   />
 </Section>
@@ -69,8 +68,8 @@ import Section from "./Section.astro";
   let imageElement = document.querySelector("#bg-image-models") as HTMLImageElement; // TypeScript
 
   if (isEdge()) {
-    imageElement.src = "marina.webp";
+    imageElement.src = "valle-alegre.webp";
   } else {
-    imageElement.src = "marina.avif";
+    imageElement.src = "valle-alegre.avif";
   }
 </script>
