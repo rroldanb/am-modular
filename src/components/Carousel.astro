@@ -1,0 +1,44 @@
+---
+interface Props {
+  id: string;
+  class?: string;
+  config?: Record<string, any>;
+}
+
+const { id, class: className, config = {} } = Astro.props;
+---
+
+<div class:list={["splide", className]} id={id}>
+  <div class="splide__track">
+    <ul class="splide__list">
+      <slot />
+    </ul>
+  </div>
+</div>
+
+<link
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-skyblue.min.css"
+  rel="stylesheet"
+/>
+
+<style is:global>
+  .splide .splide__pagination {
+    bottom: 8px;
+    background-color: rgba(112, 128, 144, 0);
+    background-size: initial;
+  }
+</style>
+
+<script
+  is:inline
+  src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"
+></script>
+
+<script define:vars={{ id, config }}>
+  document.addEventListener("DOMContentLoaded", function () {
+    var splide = new Splide(`#${id}`, config);
+    splide.mount();
+  });
+</script>

@@ -22,53 +22,41 @@ import Section from "./Section.astro"
   titleCard3=""
   boldCard3=""
   detailCard3=""
->
-<div slot="footer" class="gap-x-6 flex mx-auto mb-8">
 
-  <a
-  class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
-  font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
-    href="#"
-  >
-    Saber más</a
-  >
-  <a
-  class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
-  font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
-  href="#contacto"
+  showCarousel = true
+  CarId="Proyectos"
+
+  cards={[
+  { img: "/images/Proyectos/Proyectos01.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos02.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos03.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos04.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos05.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos06.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos07.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos08.webp", title: "", body: "" },
+  { img: "/images/Proyectos/Proyectos09.webp", title: "", body: "" },
+
+  ]}
 >
-  Contacto</a
->
+<div slot="footer">
+  <a
+    class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors mb-28"
+    href="#contacto"
+  >
+    Contacto</a
+  >
+
+  <div slot="after"></div>
 </div>
 
   <img
     slot="background"
     alt="Proyectos"
     class="h-full w-full object-cover object-center"
-    src="proyectos.avif"
+    src="proyectos.webp"
     id="bg-image-proyectos"
   />
 </Section>
 
-<script>
-  function isEdge() {
-    if (
-      navigator.userAgent.indexOf("Edge") > -1 ||
-      navigator.userAgent.indexOf("Edg") > -1
-    ) {
-      return true
-    } else {
-      return false
-    }
-  }
 
-  let imageElement = document.querySelector(
-    "#bg-image-proyectos"
-  ) as HTMLImageElement
-
-  if (isEdge()) {
-    imageElement.src = "proyectos.webp"
-  } else {
-    imageElement.src = "proyectos.avif"
-  }
-</script>

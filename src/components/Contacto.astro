@@ -22,18 +22,18 @@ import Section from "./Section.astro";
   boldCard3=""
   detailCard3=""
 >
-  <div slot="before" class="top-4 flex-col container mx-auto max-w-3xl">
+  <div slot="before" class="md:top-4 flex-col container mx-auto max-w-3xl">
     <!-- <h1>Contacto</h1> -->
-    <section class="bg-blue-50 dark:bg-slate-800/50 rounded-xl" id="contact">
+    <section class="bg-slate-800/50 rounded-xl" id="contact">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <!-- Encabezado Formulario -->
-        <div class="mb-4 ">
-          <div class="max-w-3xl text-center sm:text-center md:mx-auto mt-8">
+        <div class="mb-2 md:mb-4 ">
+          <div class="max-w-3xl text-center sm:text-center md:mx-auto mt-2 md:mt-8">
             <!-- <p class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
               Contacto
             </p> -->
             <h2
-              class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-xl md:text-3xl pt-4"
+              class="font-heading mb-4 font-bold tracking-tight text-white text-xl md:text-3xl pt-4"
             >
               Cómo contactarnos:
             </h2>
@@ -43,7 +43,7 @@ import Section from "./Section.astro";
           </div>
         </div>
 
-        <div class=" items-stretch justify-center mt-4 grid md:grid-cols-2 mb-4 mx-8">
+        <div class=" items-stretch justify-center mt-4 grid md:grid-cols-2 mb-2 md:mb-4 mx-8">
           <div class="datos-contacto  pr-6">
             <!-- <h2
             class="font-heading  tracking-tight text-white text-2xl text-left ml-2"
@@ -235,7 +235,7 @@ import Section from "./Section.astro";
           </div>
           <!-- Mapa -->
           <div
-            class="block w-full shrink-0 grow-0 basis-auto lg:flex  mb-2"
+            class="block w-full shrink-0 grow-0 basis-auto lg:flex  mb-0 md:mb-2"
           >
             <div class="h-[150px] sm:h-[150px] lg:h-[350px] w-full">
               <iframe
@@ -251,7 +251,7 @@ import Section from "./Section.astro";
         <div class="container mx-auto pb-4">
           <a 
           href="https://api.whatsapp.com/send/?phone=56962379232&text=Hola%20busco%20información%20respecto%20de%20casas%20modulares"
-          class="bg-green-500 p-2 rounded-lg text-gray-100 w-80 flex mb-4 items-center justify-center hover:bg-green-700 mx-auto "
+          class="bg-green-500 p-2 rounded-lg text-gray-100 w-80 flex md:mb-4 items-center justify-center hover:bg-green-700 mx-auto "
           target="_blank">
             <p>
 
@@ -270,49 +270,14 @@ import Section from "./Section.astro";
   </div>
 
   <div slot="footer" class="gap-x-6 flex mx-auto ">
-    <!-- <nav class="flex sm:hidden" >
-      <ul
-        class="flex text-sm bg-slate-800/50 [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-white 
-        [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 "
-      >
-        <li><a href="#marina">Casa Marina</a></li>
-        <li><a href="#lago">Casa Lago</a></li>
-        <li><a href="#montania">Casa Montaña</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#construccion">Construcción</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav> -->
+
   </div>
 
   <img
     slot="background"
     alt="Contacto"
     class="h-full w-full object-cover object-center"
-    src="contacto.avif"
+    src="contacto.webp"
     id="bg-image-contacto"
   />
 </Section>
-
-<script>
-  function isEdge() {
-    if (
-      navigator.userAgent.indexOf("Edge") > -1 ||
-      navigator.userAgent.indexOf("Edg") > -1
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  let imageElement = document.querySelector(
-    "#bg-image-contacto"
-  ) as HTMLImageElement;
-
-  if (isEdge()) {
-    imageElement.src = "contacto.webp";
-  } else {
-    imageElement.src = "contacto.avif";
-  }
-</script>

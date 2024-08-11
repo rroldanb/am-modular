@@ -1,5 +1,5 @@
 ---
-import Section from "./Section.astro"
+import Section from "./Section.astro";
 ---
 
 <Section
@@ -12,63 +12,48 @@ import Section from "./Section.astro"
   titleCard1=""
   boldCard1=""
   detailCard1=""
-  
-  displayCard2="hidden"
-  titleCard2=""
-  boldCard2=""
-  detailCard2=""
-  
+
+  displayCard2="inline-block"
+  titleCard2="Titulo de prueba"
+  boldCard2="Aspecto a destacar"
+  detailCard2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, magni qui beatae ducimus modi, accusantium, totam vero non perspiciatis sapiente consequatur alias quas."
+
   displayCard3="hidden"
   titleCard3=""
   boldCard3=""
   detailCard3=""
->
-<div slot="footer" class="gap-x-6 flex mx-auto mb-8">
 
-  <a
-  class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
-  font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
-    href="#"
-  >
-    Saber más</a
-  >
-  <a
-  class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded 
-  font-medium text-white px-2 lg:px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
-  href="#contacto"
+  showCarousel = true
+  CarId="Construccion"
+
+  cards={[
+  { img: "/images/Construccion/Construccion01.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion02.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion03.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion04.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion05.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion07.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion08.webp", title: "", body: "" },
+  { img: "/images/Construccion/Construccion06.webp", title: "", body: "" },
+
+  ]}
 >
-  Contacto</a
->
+<div slot="footer">
+  <a
+    class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors mb-28"
+    href="#contacto"
+  >
+    Contacto</a
+  >
+
+  <div slot="after"></div>
 </div>
 
   <img
     slot="background"
     alt="Construcción"
     class="h-full w-full object-cover object-center"
-    src="construccion.avif"
+    src="construccion.webp"
     id="bg-image-construccion"
   />
 </Section>
-
-<script>
-  function isEdge() {
-    if (
-      navigator.userAgent.indexOf("Edge") > -1 ||
-      navigator.userAgent.indexOf("Edg") > -1
-    ) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  let imageElement = document.querySelector(
-    "#bg-image-construccion"
-  ) as HTMLImageElement
-
-  if (isEdge()) {
-    imageElement.src = "construccion.webp"
-  } else {
-    imageElement.src = "construccion.avif"
-  }
-</script>

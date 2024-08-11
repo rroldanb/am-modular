@@ -1,0 +1,21 @@
+---
+import Card from "./Card.astro";
+import Carousel from "./Carousel.astro";
+import CarouselItem from "./CarouselItem.astro";
+const { cards , CarId} = Astro.props;
+---
+
+
+<div class="link-cards-container rounded-xl">
+    <Carousel id={CarId} >
+        {cards.map((card, index) => (
+            <CarouselItem key={index}>
+                <Card
+                    img={card.img}
+                    title={card.title}
+                    body={card.body}
+                />
+            </CarouselItem>
+        ))}
+    </Carousel>
+</div>

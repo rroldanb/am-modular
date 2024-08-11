@@ -308,49 +308,15 @@ import Section from "./Section.astro";
   </div>
 
   <div slot="footer" class="gap-x-6 flex mx-auto ">
-    <!-- <nav class="flex sm:hidden" >
-      <ul
-        class="flex text-sm bg-slate-800/50 [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-white 
-        [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 "
-      >
-        <li><a href="#marina">Casa Marina</a></li>
-        <li><a href="#lago">Casa Lago</a></li>
-        <li><a href="#montania">Casa Montaña</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#construccion">Construcción</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav> -->
+
   </div>
 
   <img
     slot="background"
     alt="Contacto"
     class="h-full w-full object-cover object-center"
-    src="contacto.avif"
+    src="contacto.webp"
     id="bg-image-contacto"
   />
 </Section>
 
-<script>
-  function isEdge() {
-    if (
-      navigator.userAgent.indexOf("Edge") > -1 ||
-      navigator.userAgent.indexOf("Edg") > -1
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  let imageElement = document.querySelector(
-    "#bg-image-contacto"
-  ) as HTMLImageElement;
-
-  if (isEdge()) {
-    imageElement.src = "contacto.webp";
-  } else {
-    imageElement.src = "contacto.avif";
-  }
-</script>
